@@ -103,11 +103,13 @@ header nav {
   margin-bottom: 0.5rem;
 }
 
-form {
-  margin-top: 1.5rem;
+.footer form {
   display: flex;
-  justify-content: center;
-  gap: 0.8rem;
+  flex-direction: column; /* stack input + button vertically */
+  align-items: center;    /* center horizontally */
+  gap: 15px;              /* spacing between input and button */
+  width: 100%;
+  max-width: 400px;       /* limits form width on large screens */
 }
 
 input {
