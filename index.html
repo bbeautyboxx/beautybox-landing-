@@ -19,17 +19,17 @@
     <p>On-demand hair, makeup, and glam — anytime, anywhere.</p>
   </section>
   
-<section class="footer" id="join">
-    <h2>Be First To Know</h2>
-    <p>Enter your email to join the waitlist.</p>
-  <<form id="waitlist-form">
-  <input type="email" name="email" placeholder="Email Address" required />
-  <button type="submit">Notify Me</button>
-  <p id="form-msg"></p>
-</form>
+<<section class="footer" id="join">
+  <h2>Be First To Know</h2>
+  <p>Enter your email to join the waitlist.</p>
+  <form id="waitlist-form">
+    <input type="email" name="email" placeholder="Email Address" required />
+    <button type="submit">Notify Me</button>
+    <p id="form-msg"></p>
+  </form>
 </section>
   
-    <script>
+   <script>
 const form = document.getElementById("waitlist-form");
 const msg = document.getElementById("form-msg");
 
@@ -37,7 +37,7 @@ form.addEventListener("submit", e => {
   e.preventDefault();
   const email = form.email.value;
 
-  fetch https://script.google.com/macros/s/AKfycbz63mZuTVmGJ2OjjcyxPrziDx7Td8OFtBEdyWhtJ7BaByU5jdO32b_lWapMpOTDQWc/exec, {
+  fetch("https://script.google.com/macros/s/AKfycbxg2zDpRJXQUutsYjXB0-9UjBMbGf0CC0Z8gieWkwldMk2M3V3FHkXivJf409--5Jia/exec", { 
     method: "POST",
     body: new URLSearchParams({email})
   })
