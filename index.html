@@ -37,7 +37,7 @@ form.addEventListener("submit", e => {
   e.preventDefault();
   const email = form.email.value;
 
-  fetch("https://script.google.com/macros/s/AKfycbz63mZuTVmGJ2OjjcyxPrziDx7Td8OFtBEdyWhtJ7BaByU5jdO32b_lWapMpOTDQWc/exec", {
+  fetch https://script.google.com/macros/s/AKfycbz63mZuTVmGJ2OjjcyxPrziDx7Td8OFtBEdyWhtJ7BaByU5jdO32b_lWapMpOTDQWc/exec, {
     method: "POST",
     body: new URLSearchParams({email})
   })
