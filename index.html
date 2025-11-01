@@ -19,13 +19,39 @@
     <p>On-demand hair, makeup, and glam — anytime, anywhere.</p>
   </section>
 
-  <section class="footer" id="join">
-    <h2>Be First To Know</h2>
-    <p>Enter your email to join the waitlist.</p>
-    <form>
-      <input type="email" placeholder="Email Address" />
-      <button type="submit">Notify Me</button>
-    </form>
-  </section>
+  <<form id="waitlist-form">
+  <input type="email" name="email" placeholder="Email Address" required />
+  <button type="submit">Notify Me</button>
+  <p id="form-msg"></p>
+</form>
+    <script>
+const form = document.getElementById("waitlist-form");
+const msg = document.getElementById("form-msg");
+
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  const email = form.email.value;
+
+  fetch("https://script.google.com/macros/s/AKfycbz63mZuTVmGJ2OjjcyxPrziDx7Td8OFtBEdyWhtJ7BaByU5jdO32b_lWapMpOTDQWc/exec", {
+    method: "POST",
+    body: new URLSearchParams({email})
+  })
+  .then(res => res.text())
+  .then(response => {
+    if (response === "Success") {
+      msg.textContent = "Thanks! You’re on the waitlist!";
+      msg.style.color = "green";
+      form.reset();
+    } else {
+      msg.textContent = "Oops, something went wrong.";
+      msg.style.color = "red";
+    }
+  })
+  .catch(err => {
+    msg.textContent = "Error submitting form.";
+    msg.style.color = "red";
+  });
+});
+</script>
 </body>
 </html>
