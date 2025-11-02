@@ -239,5 +239,47 @@ button:hover {
   color: #6a1b9a;
   font-size: 0.95rem;
 }
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #f8c1d9, #ffe8f1);
+  margin-top: 4rem;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.site-footer h2 {
+  font-size: 2rem;
+  color: #880e4f;
+  margin-bottom: 0.5rem;
+}
+
+.site-footer p {
+  color: #6a1b9a;
+  margin-bottom: 2rem;
+}
+
+.footer-btn {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  background: #d81b60;
+  color: white;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.footer-btn:hover {
+  background: #ad1457;
+}
+
+.site-footer .copyright {
+  margin-top: 2.5rem;
+  font-size: 0.85rem;
+  color: #aa7bb6;
+}
+
 
 
