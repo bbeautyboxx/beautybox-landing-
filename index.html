@@ -4,78 +4,93 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Beauty Box</title>
-  <link href="https://fonts.googleapis.com/css2?family:Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
-  
-  <footer class="site-footer">
-  <h2>Be the First to Try Beauty Box</h2>
-  <p>We're launching soon. Join the waitlist and get early access.</p>
-  <a href="#waitlist-form" class="footer-btn">Join Waitlist</a>
-  <p class="copyright">© 2025 Beauty Box</p>
-</footer>
 
 <body>
+  <!-- Top Center Join Button -->
   <header>
- <nav class="center-nav">
-  <a href="#waitlist-form" class="cta">Join Waitlist</a>
-</nav>
+    <nav class="center-nav">
+      <a href="#waitlist-form" class="cta">Join Waitlist</a>
+    </nav>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
     <h1>Your Beauty, Delivered.</h1>
     <p>On-demand hair, makeup, and glam — anytime, anywhere.</p>
   </section>
+
+  <!-- Value Proposition Section -->
   <section class="value-section">
-  <h2>Beauty On-Demand</h2>
-  <p>Get professional hair and makeup services delivered to your location for events, nights out, photoshoots, and more.</p>
+    <h2>Beauty On-Demand</h2>
+    <p>Get professional hair and makeup services delivered to your location for events, nights out, photoshoots, and more.</p>
 
-  <div class="value-grid">
-    <div class="value-item">
-      <h3>✨ Convenience</h3>
-      <p>No travel. No waiting rooms. Your glam squad comes to you.</p>
+    <div class="value-grid">
+      <div class="value-item">
+        <h3>✨ Convenience</h3>
+        <p>No travel. No waiting rooms. Your glam squad comes to you.</p>
+      </div>
+
+      <div class="value-item">
+        <h3>🎨 Professional Artists</h3>
+        <p>Our vetted stylists and makeup pros deliver top-tier results.</p>
+      </div>
+
+      <div class="value-item">
+        <h3>⏱️ On Your Schedule</h3>
+        <p>Book in advance or request last-minute glam — anytime.</p>
+      </div>
     </div>
+  </section>
 
-    <div class="value-item">
-      <h3>🎨 Professional Artists</h3>
-      <p>Our vetted stylists and makeup pros deliver top-tier results.</p>
-    </div>
+  <!-- Waitlist Form (kept hidden until clicked) -->
+  <form id="waitlist-form">
+    <input type="email" name="email" placeholder="Email Address" required />
+    <button type="submit">Notify Me</button>
+    <p id="form-msg"></p>
+  </form>
 
-    <div class="value-item">
-      <h3>⏱️ On Your Schedule</h3>
-      <p>Book in advance or request last-minute glam — anytime.</p>
-    </div>
-  </div>
-</section>
-  
-   <script>
-const form = document.getElementById("waitlist-form");
-const msg = document.getElementById("form-msg");
+  <!-- Footer (Simple & clean now) -->
+  <footer class="site-footer">
+    <p>© 2025 Beauty Box</p>
+  </footer>
 
-form.addEventListener("submit", e => {
-  e.preventDefault();
-  const email = form.email.value;
+  <!-- Script -->
+  <script>
+  const form = document.getElementById("waitlist-form");
+  const msg = document.getElementById("form-msg");
 
-  fetch("https://script.google.com/macros/s/AKfycbxg2zDpRJXQUutsYjXB0-9UjBMbGf0CC0Z8gieWkwldMk2M3V3FHkXivJf409--5Jia/exec", { 
-    method: "POST",
-    body: new URLSearchParams({email})
-  })
-  .then(res => res.text())
-  .then(response => {
-    if (response === "Success") {
-      msg.textContent = "Thanks! You’re on the waitlist!";
-      msg.style.color = "green";
-      form.reset();
-    } else {
-      msg.textContent = "Oops, something went wrong.";
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    const email = form.email.value;
+
+    fetch("https://script.google.com/macros/s/AKfycbxg2zDpRJXQUutsYjXB0-9UjBMbGf0CC0Z8gieWkwldMk2M3V3FHkXivJf409--5Jia/exec", { 
+      method: "POST",
+      body: new URLSearchParams({email})
+    })
+    .then(res => res.text())
+    .then(response => {
+      if (response === "Success") {
+        msg.textContent = "Thanks! You’re on the waitlist!";
+        msg.style.color = "green";
+        form.reset();
+      } else {
+        msg.textContent = "Oops, something went wrong.";
+        msg.style.color = "red";
+      }
+    })
+    .catch(err => {
+      msg.textContent = "Error submitting form.";
       msg.style.color = "red";
-    }
-  })
-  .catch(err => {
-    msg.textContent = "Error submitting form.";
-    msg.style.color = "red";
+    });
   });
-});
-</script>
+  </script>
+
 </body>
 </html>
