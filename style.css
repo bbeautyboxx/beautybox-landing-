@@ -5,19 +5,32 @@
   --lux-rose-dark: #8b7067;  /* deeper muted taupe */
   --soft-blush: #f4efed;     /* off-white warm blush */
   --deep-text: #3a2a25;      /* rich warm brown-black */
+  :root {
+  --lux-rose: #b8a39a;       /* taupe rose */
+  --lux-rose-dark: #8b7067;  /* deeper muted taupe */
+  --soft-blush: #f4efed;     /* warm blush background */
+  --deep-text: #3a2a25;      /* rich warm brown */
+  --subtle-brown: #6d5750;   /* muted support text tone */
+}
+
 }
 
 body {
   font-family: 'Inter', sans-serif;
   background: #fff;
-  color: #3a2a2a;
+  color: var(--deep-text);
   line-height: 1.6;
 }
 
 h1, h2, h3 {
+  color: var(--deep-text);
   font-family: 'Playfair Display', serif;
   font-weight: 600;
   letter-spacing: -0.5px;
+}
+
+p {
+  color: var(--subtle-brown);
 }
 
 header nav {
@@ -31,12 +44,17 @@ header nav {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.7rem;
   font-weight: 500;
-}
-
+  
 .cta,
 .footer-btn,
 button {
   background: var(--lux-rose);
+  color: white;
+  border-radius: 30px;
+  padding: 0.7rem 1.6rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s ease;
 }
 
 .cta:hover,
@@ -45,9 +63,15 @@ button:hover {
   background: var(--lux-rose-dark);
 }
 
+}
+
 .value-item {
   background: var(--soft-blush);
   color: var(--deep-text);
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 260px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
 }
 
 .hero {
