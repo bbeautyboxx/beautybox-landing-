@@ -1,25 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
-  --lux-rose: #b8a39a;       /* taupe rose */
-  --lux-rose-dark: #8b7067;  /* deeper muted taupe */
-  --soft-blush: #f4efed;     /* off-white warm blush */
-  --deep-text: #3a2a25;      /* rich warm brown-black */
-  :root {
-  --lux-rose: #b8a39a;       /* taupe rose */
-  --lux-rose-dark: #8b7067;  /* deeper muted taupe */
-  --soft-blush: #f4efed;     /* warm blush background */
-  --deep-text: #3a2a25;      /* rich warm brown */
-  --subtle-brown: #6d5750;   /* muted support text tone */
-}
-
+  --lux-rose: #c8b8ac;      /* soft beige rose */
+  --lux-rose-dark: #a0887d; /* deeper neutral beige */
+  --soft-blush: #faf8f7;    /* luxury off-white grey */
+  --deep-text: #2c2a29;     /* neutral espresso (not warm brown) */
+  --subtle-brown: #6e6a68;  /* cool gray-brown for paragraph text */
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background: #fff;
+  background: #ffffff;
   color: var(--deep-text);
-  line-height: 1.6;
 }
 
 h1, h2, h3 {
@@ -49,7 +40,7 @@ header nav {
 .footer-btn,
 button {
   background: var(--lux-rose);
-  color: white;
+  color: #ffffff;
   border-radius: 30px;
   padding: 0.7rem 1.6rem;
   font-weight: 500;
@@ -61,6 +52,8 @@ button {
 .footer-btn:hover,
 button:hover {
   background: var(--lux-rose-dark);
+}
+
 }
 
 }
@@ -89,13 +82,13 @@ button:hover {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.45);
+  background: rgba(255, 255, 255, 0.25); /* soft white overlay instead of dark */
+  backdrop-filter: brightness(0.85); /* gives it that luxury editorial wash */
 }
 
 .hero h1,
 .hero p {
-  position: relative;
-  z-index: 2;
+  color: #ffffff;
 }
 
 .hero h1 {
