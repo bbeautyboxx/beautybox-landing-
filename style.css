@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
-  --lux-rose: #b76e79;
-  --lux-rose-dark: #914c56;
-  --soft-blush: #f9ecef;
-  --deep-text: #3a2a2a;
+  --lux-rose: #b8a39a;       /* taupe rose */
+  --lux-rose-dark: #8b7067;  /* deeper muted taupe */
+  --soft-blush: #f4efed;     /* off-white warm blush */
+  --deep-text: #3a2a25;      /* rich warm brown-black */
 }
-
 
 body {
   font-family: 'Inter', sans-serif;
@@ -35,18 +34,20 @@ header nav {
 }
 
 .cta,
-.footer-btn {
+.footer-btn,
+button {
   background: var(--lux-rose);
-  color: white !important;
-  border-radius: 30px;
-  padding: 0.7rem 1.6rem;
-  transition: 0.3s ease;
-  font-weight: 500;
 }
 
 .cta:hover,
-.footer-btn:hover {
+.footer-btn:hover,
+button:hover {
   background: var(--lux-rose-dark);
+}
+
+.value-item {
+  background: var(--soft-blush);
+  color: var(--deep-text);
 }
 
 .hero {
@@ -307,6 +308,20 @@ body {
 
 .hero {
   padding: 6rem 1rem;
+}
+.center-nav {
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.center-nav .cta {
+  background: var(--lux-rose);
+  color: white !important;
+  border-radius: 30px;
+  padding: 0.7rem 1.6rem;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
 }
 
 
