@@ -36,8 +36,30 @@ h1, h2, h3 {
 
 /* ===== Hero Section ===== */
 .hero {
-  padding: 120px 30px;
-  background-color: #f3eeeb; /* soft ivory contrast */
+  padding: 140px 30px;
+  background-image: url("YOUR_IMAGE_FILE_NAME.jpg"); /* update name if needed */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  color: #3c332b;
+}
+
+/* Soft overlay tint (makes text pop in luxury style) */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(247, 243, 241, 0.65); /* soft nude veil overlay */
+  backdrop-filter: blur(1px);
+}
+
+.hero h1,
+.hero p {
+  position: relative; /* keeps text above overlay */
 }
 
 .hero h1 {
